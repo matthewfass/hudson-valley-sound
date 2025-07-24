@@ -53,3 +53,9 @@ out/
 *.bak
 *.backup
 *.orig
+
+# Deployment configuration
+config/deploy.config.js
+config/deploy.sh
+.deploy/
+rsync.exclude

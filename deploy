@@ -1,0 +1,11 @@
+#!/bin/bash
+
+# Hudson Valley Sound - Deployment Wrapper
+# This script runs the deployment from the config directory
+
+# Change to the directory where this script is located
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+cd "$SCRIPT_DIR"
+
+# Run the deployment script from the config directory
+exec ./config/deploy.sh "$@"
