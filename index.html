@@ -3,16 +3,124 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hudson Valley Sound - Professional Audio Services for Every Occasion</title>
-    <meta name="description" content="High-quality sound and audio engineering for weddings, business meetings, parties across the Hudson Valley. Professional equipment, experienced engineer.">
+    <title>Hudson Valley Sound - Professional Wedding & Event Audio Services | Dutchess County NY</title>
+    <meta name="description" content="Professional audio services for weddings, corporate events & parties in Hudson Valley NY. Expert sound engineer, wireless mics, battery-powered equipment. Serving Dutchess County & surrounding areas.">
+    
+    <!-- SEO Meta Tags -->
+    <meta name="keywords" content="Hudson Valley sound, wedding audio services, event sound engineer, wireless microphones, professional audio equipment, Dutchess County audio, corporate event sound, wedding ceremony sound">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="Hudson Valley Sound">
+    <link rel="canonical" href="https://hudsonvalleysound.com/">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://hudsonvalleysound.com/">
+    <meta property="og:title" content="Hudson Valley Sound - Professional Wedding & Event Audio Services">
+    <meta property="og:description" content="Professional audio services for weddings, corporate events & parties in Hudson Valley NY. Expert sound engineer, wireless mics, battery-powered equipment.">
+    <meta property="og:image" content="https://hudsonvalleysound.com/images/hudson-valley-sound-og.jpg">
+    <meta property="og:site_name" content="Hudson Valley Sound">
+    <meta property="og:locale" content="en_US">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://hudsonvalleysound.com/">
+    <meta property="twitter:title" content="Hudson Valley Sound - Professional Wedding & Event Audio Services">
+    <meta property="twitter:description" content="Professional audio services for weddings, corporate events & parties in Hudson Valley NY. Expert sound engineer, wireless mics, battery-powered equipment.">
+    <meta property="twitter:image" content="https://hudsonvalleysound.com/images/hudson-valley-sound-twitter.jpg">
+    
+    <!-- Local Business Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "Hudson Valley Sound",
+      "description": "Professional audio services for weddings, corporate events and parties in Hudson Valley NY",
+      "url": "https://hudsonvalleysound.com",
+      "telephone": "+1-845-555-0123",
+      "email": "info@hudsonvalleysound.com",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Kingston",
+        "addressRegion": "NY",
+        "addressCountry": "US"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": "41.9270",
+        "longitude": "-74.0037"
+      },
+      "areaServed": {
+        "@type": "State",
+        "name": "New York"
+      },
+      "serviceArea": [
+        "Hudson Valley",
+        "Dutchess County",
+        "Ulster County",
+        "Columbia County",
+        "Orange County"
+      ],
+      "priceRange": "$400-$1200",
+      "openingHours": "Mo-Su 08:00-20:00",
+      "sameAs": [
+        "https://www.facebook.com/hudsonvalleysound",
+        "https://www.instagram.com/hudsonvalleysound",
+        "https://www.linkedin.com/company/hudson-valley-sound"
+      ],
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Audio Services",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Wedding Audio Services",
+              "description": "Professional sound reinforcement for wedding ceremonies and receptions"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Corporate Event Audio",
+              "description": "Professional audio solutions for business meetings and conferences"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Party Sound Systems",
+              "description": "Sound reinforcement for private parties and celebrations"
+            }
+          }
+        ]
+      }
+    }
+    </script>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
     <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Theme toggle script - run early to prevent flash -->
+    <script>
+        (function() {
+            const savedTheme = localStorage.getItem('theme') || 'dark';
+            document.documentElement.setAttribute('data-theme', savedTheme);
+        })();
+    </script>
 </head>
-<body>
+<body data-theme="dark">
     <!-- Navigation -->
-    <nav class="navbar">
+    <nav class="navbar" role="navigation" aria-label="Main navigation">
         <div class="nav-container">
             <div class="nav-logo">
                 <h2>Hudson Valley Sound</h2>
@@ -22,6 +130,9 @@
                 <li><a href="#services" class="nav-link">Services</a></li>
                 <li><a href="#pricing" class="nav-link">Pricing</a></li>
                 <li><a href="#about" class="nav-link">About</a></li>
+                <li><button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">
+                    <span class="theme-icon">🌙</span>
+                </button></li>
                 <li><a href="#contact" class="nav-link cta-nav">Get Quote</a></li>
             </ul>
             <div class="hamburger">
@@ -36,9 +147,9 @@
     <section id="home" class="hero">
         <div class="hero-container">
             <div class="hero-content">
-                <h1>Professional Sound & Audio Services for Every Occasion</h1>
-                <p class="hero-subtitle">Bring Your Event to Life with Expert Audio Solutions</p>
-                <p class="hero-description">Hudson Valley Sound delivers high-quality sound and audio engineering for events of all sizes across the Hudson Valley region. With professional-grade equipment and decades of expertise, we ensure crystal-clear audio indoors or out.</p>
+                <h1>Professional Wedding & Event Audio Services in Hudson Valley NY</h1>
+                <p class="hero-subtitle">Expert Sound Engineering for Weddings, Corporate Events & Parties</p>
+                <p class="hero-description">Hudson Valley Sound delivers premium audio services across Dutchess County and the greater Hudson Valley region. Our professional sound engineer brings decades of experience with industry-standard Shure microphones, wireless systems, and battery-powered equipment for perfect audio at any venue.</p>
                 <div class="hero-buttons">
                     <a href="#contact" class="btn btn-primary">Book Your Event</a>
                     <a href="#services" class="btn btn-secondary">View Services</a>
@@ -46,16 +157,16 @@
             </div>
             <div class="hero-features">
                 <div class="feature-card">
-                    <h3>🎤 Professional Equipment</h3>
-                    <p>Shure microphones, amplifier towers, wireless capability</p>
+                    <h3>🎤 Professional Audio Equipment</h3>
+                    <p>Industry-standard Shure wireless microphones, amplifier towers, professional mixing boards</p>
                 </div>
                 <div class="feature-card">
-                    <h3>🔋 Battery Powered</h3>
-                    <p>No power outlet needed for most setups</p>
+                    <h3>🔋 Battery Powered Systems</h3>
+                    <p>Portable power solutions for outdoor weddings and remote venues throughout Hudson Valley</p>
                 </div>
                 <div class="feature-card">
-                    <h3>👨‍🎓 Expert Service</h3>
-                    <p>Decades of live sound and event production experience</p>
+                    <h3>👨‍🎓 Expert Sound Engineer</h3>
+                    <p>Decades of live sound engineering experience for weddings, corporate events, and parties</p>
                 </div>
             </div>
         </div>
@@ -64,32 +175,32 @@
     <!-- Why Choose Us Section -->
     <section class="why-choose">
         <div class="container">
-            <h2>Why Choose Hudson Valley Sound?</h2>
+            <h2>Why Choose Hudson Valley Sound for Your Event Audio?</h2>
             <div class="benefits-grid">
                 <div class="benefit">
                     <div class="benefit-icon">🎛️</div>
-                    <h3>Professional Equipment</h3>
-                    <p>Industry-standard Shure microphones, amplifier towers, wireless capability, and portable power for any venue.</p>
+                    <h3>Professional Audio Equipment</h3>
+                    <p>Industry-standard Shure wireless microphones, professional amplifier towers, mixing boards, and portable power systems for any Hudson Valley venue.</p>
                 </div>
                 <div class="benefit">
                     <div class="benefit-icon">🎉</div>
-                    <h3>Versatile Events</h3>
-                    <p>Weddings, corporate meetings, private parties, outdoor festivals, and more.</p>
+                    <h3>Complete Event Audio Services</h3>
+                    <p>Wedding ceremony and reception sound, corporate meetings, business conferences, private parties, and outdoor festivals throughout Dutchess County.</p>
                 </div>
                 <div class="benefit">
                     <div class="benefit-icon">👨‍🔧</div>
-                    <h3>Experienced Engineer</h3>
-                    <p>Decades of expertise in live sound, mixing, and event production.</p>
+                    <h3>Expert Sound Engineer</h3>
+                    <p>Decades of professional live sound engineering, audio mixing, and event production experience in the Hudson Valley region.</p>
                 </div>
                 <div class="benefit">
                     <div class="benefit-icon">⚡</div>
-                    <h3>Seamless Setup</h3>
-                    <p>Fast, discreet installation and teardown—no power outlet needed for most setups.</p>
+                    <h3>Battery-Powered Audio Systems</h3>
+                    <p>Fast, professional setup and teardown with battery-powered equipment—perfect for outdoor Hudson Valley wedding venues without power outlets.</p>
                 </div>
                 <div class="benefit">
                     <div class="benefit-icon">🎯</div>
-                    <h3>Personalized Service</h3>
-                    <p>Tailored audio solutions to match your event's unique needs.</p>
+                    <h3>Customized Audio Solutions</h3>
+                    <p>Personalized sound reinforcement tailored to your specific event needs, venue requirements, and guest count in the Hudson Valley area.</p>
                 </div>
             </div>
         </div>
@@ -98,31 +209,31 @@
     <!-- Services Section -->
     <section id="services" class="services">
         <div class="container">
-            <h2>Our Services</h2>
+            <h2>Professional Audio Services in Hudson Valley NY</h2>
             <div class="services-grid">
                 <div class="service-card">
-                    <h3>Full Event Sound Reinforcement</h3>
-                    <p>Complete audio solutions for events of all sizes</p>
+                    <h3>Wedding Audio Services</h3>
+                    <p>Professional sound reinforcement for Hudson Valley wedding ceremonies and receptions with wireless microphones and battery-powered systems</p>
                 </div>
                 <div class="service-card">
                     <h3>Wireless Microphone Systems</h3>
-                    <p>Professional wireless mics for speakers and performers</p>
+                    <p>Professional Shure wireless microphones for wedding vows, corporate presentations, and event speakers throughout Dutchess County</p>
                 </div>
                 <div class="service-card">
-                    <h3>Indoor & Outdoor Audio Solutions</h3>
-                    <p>Versatile setups for any venue or environment</p>
+                    <h3>Corporate Event Audio</h3>
+                    <p>Business meeting sound systems, conference audio, and presentation support for companies in the Hudson Valley region</p>
                 </div>
                 <div class="service-card">
-                    <h3>Business Meetings & Conferences</h3>
-                    <p>Clear audio for professional presentations</p>
+                    <h3>Outdoor Event Sound Systems</h3>
+                    <p>Battery-powered audio solutions perfect for outdoor Hudson Valley venues, gardens, and remote locations without power access</p>
                 </div>
                 <div class="service-card">
-                    <h3>Wedding Ceremonies & Receptions</h3>
-                    <p>Make your special day sound perfect</p>
+                    <h3>Party & Celebration Audio</h3>
+                    <p>Sound reinforcement for birthday parties, anniversaries, graduation parties, and family celebrations in Dutchess County</p>
                 </div>
                 <div class="service-card">
-                    <h3>Parties, Festivals, and Community Events</h3>
-                    <p>Audio support for celebrations and gatherings</p>
+                    <h3>Community & Festival Sound</h3>
+                    <p>Professional audio support for Hudson Valley community events, festivals, fundraisers, and public gatherings</p>
                 </div>
             </div>
         </div>
@@ -161,7 +272,7 @@
                             <td>$150</td>
                             <td>4 mics, 2 amp towers</td>
                         </tr>
-                        <tr class="highlight">
+                        <tr>
                             <td>Wedding Ceremony + Reception</td>
                             <td>$1,200</td>
                             <td>$150</td>
@@ -194,22 +305,22 @@
         <div class="container">
             <div class="about-content">
                 <div class="about-text">
-                    <h2>Your Event, Amplified</h2>
-                    <p>With decades of experience in live sound engineering and event production, Hudson Valley Sound brings professional-grade audio solutions to intimate and small-to-medium events throughout the region.</p>
-                    <p>We specialize in creating the perfect audio experience for your special moments—whether it's ensuring every word of your wedding vows is heard clearly, making your business presentation impactful, or keeping the party energy high with crystal-clear sound.</p>
-                    <p>Our commitment to personalized service means we work closely with you to understand your event's unique needs and deliver tailored audio solutions that exceed expectations.</p>
+                    <h2>Professional Sound Engineer Serving Hudson Valley NY</h2>
+                    <p>With decades of experience in live sound engineering and event production, Hudson Valley Sound brings professional-grade audio solutions to weddings, corporate events, and celebrations throughout Dutchess County and the greater Hudson Valley region.</p>
+                    <p>We specialize in creating the perfect audio experience for your most important moments—whether it's ensuring every word of your wedding vows is heard clearly at outdoor Hudson Valley venues, making your corporate presentation impactful with wireless microphone systems, or keeping your party energy high with crystal-clear sound reinforcement.</p>
+                    <p>Our commitment to personalized service means we work closely with Hudson Valley clients to understand each event's unique needs and deliver customized audio solutions that exceed expectations every time.</p>
                     <div class="about-highlights">
                         <div class="highlight-item">
-                            <strong>Professional Grade Equipment</strong>
-                            <p>Dual amplifier towers, four Shure microphones, versatile mixer</p>
+                            <strong>Professional Audio Equipment</strong>
+                            <p>Dual amplifier towers, four professional Shure wireless microphones, versatile mixing board, and battery power systems</p>
                         </div>
                         <div class="highlight-item">
-                            <strong>Local Expertise</strong>
-                            <p>Deep knowledge of Hudson Valley venues and event requirements</p>
+                            <strong>Hudson Valley Expertise</strong>
+                            <p>Deep knowledge of Dutchess County wedding venues, corporate event spaces, and outdoor locations throughout the Hudson Valley</p>
                         </div>
                         <div class="highlight-item">
-                            <strong>Reliable Service</strong>
-                            <p>Fast setup, professional operation, seamless teardown</p>
+                            <strong>Professional Sound Service</strong>
+                            <p>Expert setup, professional sound engineering operation, and seamless equipment teardown for Hudson Valley events</p>
                         </div>
                     </div>
                 </div>
@@ -221,8 +332,8 @@
     <section id="contact" class="contact">
         <div class="container">
             <div class="contact-header">
-                <h2>Book Your Event</h2>
-                <p>Let's make your event sound incredible. Fill out the form below and we'll get back to you within 24 hours.</p>
+                <h2>Book Hudson Valley Sound for Your Event</h2>
+                <p>Ready to make your Hudson Valley wedding, corporate event, or party sound incredible? Fill out our contact form below and we'll provide a custom quote within 24 hours.</p>
             </div>
             <div class="contact-content">
                 <form class="contact-form" id="contactForm" netlify>
@@ -347,7 +458,7 @@
                     <div class="contact-item">
                         <h4>Service Area</h4>
                         <p>Hudson Valley Region<br>
-                        Dutchess County and surrounding areas</p>
+                        Dutchess County, Ulster County, Columbia County, Orange County, and surrounding areas in New York</p>
                     </div>
                     <div class="contact-item">
                         <h4>Response Time</h4>
@@ -387,7 +498,7 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2024 Hudson Valley Sound. All rights reserved.</p>
+                <p>&copy; <span id="copyright-year">2025</span> Hudson Valley Sound. All rights reserved.</p>
             </div>
         </div>
     </footer>

@@ -1,0 +1,18 @@
+User-agent: *
+Allow: /
+
+# Sitemaps
+Sitemap: https://hudsonvalleysound.com/sitemap.xml
+
+# Block access to admin areas if any exist
+Disallow: /admin/
+Disallow: /private/
+Disallow: *.pdf$
+
+# Allow important files
+Allow: /styles.css
+Allow: /script.js
+Allow: /images/
+
+# Crawl-delay for polite crawling
+Crawl-delay: 1

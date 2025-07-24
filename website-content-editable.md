@@ -109,7 +109,7 @@ Transparent Pricing
 | Large Event (151–300 guests) | $950 | $150 | 4 mics, 2 amp towers |
 | **Wedding Ceremony + Reception** | **$1,200** | **$150** | **Setup at two locations** |
 | Business Meeting/Conference | $500 | $90 | Wireless mics, mixer, speakers |
-| Outdoor/Battery-Powered Event | No charge | — | For remote or off-grid venues |
+| Outdoor/Battery-Powered Event | Included | — | For remote or off-grid venues |
 
 ### Pricing Note
 *Custom packages available. Travel fees may apply for locations more than 75 miles from Kingston, NY*

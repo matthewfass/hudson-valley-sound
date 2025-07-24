@@ -1,6 +1,60 @@
 // Wait for DOM to be fully loaded
 document.addEventListener('DOMContentLoaded', function() {
     
+    // Theme Toggle Functionality
+    const themeToggle = document.getElementById('theme-toggle');
+    const themeIcon = document.querySelector('.theme-icon');
+    
+    // Initialize theme
+    function initializeTheme() {
+        const savedTheme = localStorage.getItem('theme') || 'dark';
+        document.documentElement.setAttribute('data-theme', savedTheme);
+        document.body.setAttribute('data-theme', savedTheme);
+        updateThemeIcon(savedTheme);
+    }
+    
+    // Update theme icon based on current theme
+    function updateThemeIcon(theme) {
+        if (themeIcon) {
+            themeIcon.textContent = theme === 'dark' ? '☀️' : '🌙';
+        }
+    }
+    
+    // Toggle theme function
+    function toggleTheme() {
+        const currentTheme = document.documentElement.getAttribute('data-theme');
+        const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+        
+        document.documentElement.setAttribute('data-theme', newTheme);
+        document.body.setAttribute('data-theme', newTheme);
+        localStorage.setItem('theme', newTheme);
+        updateThemeIcon(newTheme);
+        
+        // Add a subtle animation feedback
+        if (themeToggle) {
+            themeToggle.style.transform = 'scale(0.9)';
+            setTimeout(() => {
+                themeToggle.style.transform = 'scale(1)';
+            }, 150);
+        }
+    }
+    
+    // Add event listener to theme toggle button
+    if (themeToggle) {
+        themeToggle.addEventListener('click', toggleTheme);
+        
+        // Keyboard support for theme toggle
+        themeToggle.addEventListener('keydown', function(e) {
+            if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                toggleTheme();
+            }
+        });
+    }
+    
+    // Initialize theme on page load
+    initializeTheme();
+    
     // Mobile Navigation Toggle
     const hamburger = document.querySelector('.hamburger');
     const navMenu = document.querySelector('.nav-menu');
@@ -20,17 +74,40 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     
-    // Navbar background on scroll
+    // Navbar background on scroll - theme aware
     const navbar = document.querySelector('.navbar');
     if (navbar) {
-        window.addEventListener('scroll', function() {
+        function updateNavbarOnScroll() {
+            const currentTheme = document.documentElement.getAttribute('data-theme');
+            const isDark = currentTheme === 'dark';
+            
             if (window.scrollY > 100) {
-                navbar.style.background = 'rgba(255, 255, 255, 0.95)';
+                if (isDark) {
+                    navbar.style.background = 'rgba(21, 20, 25, 0.98)';
+                } else {
+                    navbar.style.background = 'rgba(255, 255, 255, 0.95)';
+                }
                 navbar.style.backdropFilter = 'blur(10px)';
             } else {
-                navbar.style.background = '#ffffff';
+                navbar.style.background = '';
                 navbar.style.backdropFilter = 'none';
             }
+        }
+        
+        window.addEventListener('scroll', updateNavbarOnScroll);
+        
+        // Update navbar when theme changes
+        const observer = new MutationObserver(function(mutations) {
+            mutations.forEach(function(mutation) {
+                if (mutation.type === 'attributes' && mutation.attributeName === 'data-theme') {
+                    updateNavbarOnScroll();
+                }
+            });
+        });
+        
+        observer.observe(document.documentElement, {
+            attributes: true,
+            attributeFilter: ['data-theme']
         });
     }
     
@@ -304,6 +381,18 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         }
     });
+    
+    // Update copyright year automatically
+    function updateCopyrightYear() {
+        const copyrightElement = document.getElementById('copyright-year');
+        if (copyrightElement) {
+            const currentYear = new Date().getFullYear();
+            copyrightElement.textContent = currentYear;
+        }
+    }
+    
+    // Update copyright year on page load
+    updateCopyrightYear();
     
     console.log('Hudson Valley Sound website loaded successfully!');
 });
