@@ -1,0 +1,16 @@
+Name,First,Last,Email,Phone,EventType,EventDate,StartTime,EndTime,Guests,VenueName,VenueAddress,IndoorOutdoor,Power,Services,AdditionalDetails,Message,Source
+John Doe,,,johndoe@example.com,555-1234,Wedding,2025-09-15,15:00,21:00,120,Grandview,124 Rd, Hudson Valley,Indoor,Yes,"Sound Reinforcement, Wireless Microphones",Would like to discuss a custom package.,Web Search
+Jane Smith,,,janesmith@email.com,555-5678,Business,2025-08-10,09:00,14:00,50,Hilton Garden Inn,56 Blvd, Poughkeepsie,Indoor,Yes,"Mixer, Wireless Microphones",Need equipment for presentation.,Referral
+Alice Johnson,,,alicej@yahoo.com,555-8765,Party,2025-10-20,18:00,23:00,85,Backyard Venue,789 Dr, Rhinebeck,Outdoor,No,Sound Reinforcement,"Theme: 1980s party, needs lighting.",Social Media
+Bob Brown,,,bobbrown@workmail.com,555-4321,Other,2025-11-11,13:00,17:00,30,Community Hall,321 Ln, Kingston,Indoor,No,"Mixer, Other",Corporate team-building exercise.,Email
+Carol White,,,carolwhite@aol.com,555-9090,Wedding,2025-12-25,12:00,22:00,200,Ridge View Estates,987 St, Newburgh,Both,Yes,"Sound Reinforcement, Wireless Microphones","Winter wonderland theme, need additional speakers outside.",The Knot
+Dave Green,,,davegreen@project.org,555-2020,Conference,2025-07-04,10:00,16:00,25,Vassar College,101 Ct, Poughkeepsie,Indoor,Yes,Mixer,Technical setup assistance required.,Website
+Ella Blue,,,ella@gmail.net,555-3030,Festival,2025-08-15,17:00,22:00,500,Main Stage Park,85 Frst, Hudson Valley,Outdoor,No,Sound Reinforcement,"Community arts festival, needs to cover multiple stages.",Google
+Fred Black,,,fredblack99@live.com,555-4040,Wedding,2025-09-01,14:00,20:00,150,The Gardens,42 Bvd, Warwick,Indoor,Yes,"Sound Reinforcement, Wireless Microphones, Other",Includes DJ announcements.,Referral
+Gina Davis,,,ginadavis@someplace.net,555-5050,Party,2025-11-18,19:00,01:00,75,Patio Place,222 Ave, Monroe,Indoor,No,Sound Reinforcement,"Casual, friendly atmosphere.",Word of Mouth
+Hank Hill,,,hankhill@propane.com,555-6060,Event,2025-12-02,08:00,12:00,100,Corporate Hotel,202 Str, Kingston,Indoor,Yes,"Wireless Microphones, Mixer",Sales conference with different speakers.,Local Ad
+Ivy Clark,,,ivy.clark@mail.com,555-7070,Worship,2025-10-05,09:00,11:00,400,Outdoor Chapel,303 Blv, Hudson Valley,Outdoor,No,Sound Reinforcement,Outdoor service with choir.,Facebook Ad
+Jack Miller,,,jackmiller55@mail.com,555-8080,Party,2025-07-20,16:00,22:00,60,Rolling Hills,707 Ln, Highland,Outdoor,Yes,"Sound Reinforcement, Wireless Microphones","Family reunion, need karaoke setup.",Family
+Kath Lutz,,,kath.lutz@shops.com,555-9091,Fair,2025-08-30,11:00,17:00,350,Fairgrounds,808 St, New Paltz,Outdoor,No,"Sound Reinforcement, Wireless Microphones",Annual craft fair with multiple vendors.,Vendor
+Liam Wright,,,liamwright@live.org,555-1001,Wedding,2025-07-14,14:00,20:00,175,Mansion House,909 Rd, Woodstock,Indoor,Yes,"Sound Reinforcement, Mixer, Wireless Microphones",Looking for classic rock playlist.,Direct Mail
+Maya Brown,,,mayabrown@random.org,555-2002,Rally,2025-08-22,12:00,15:00,200,Public Square,987 Avn, Saugerties,Outdoor,Unsure,Sound Reinforcement,"Political rally, will provide speakers.",Instagram
