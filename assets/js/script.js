@@ -394,5 +394,203 @@ document.addEventListener('DOMContentLoaded', function() {
     // Update copyright year on page load
     updateCopyrightYear();
     
+    // Lightbox Gallery Functionality
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImage = document.getElementById('lightbox-image');
+    const lightboxTitle = document.getElementById('lightbox-title');
+    const lightboxDescription = document.getElementById('lightbox-description');
+    const lightboxCurrent = document.getElementById('lightbox-current');
+    const lightboxTotal = document.getElementById('lightbox-total');
+    const lightboxClose = document.querySelector('.lightbox-close');
+    const lightboxPrev = document.querySelector('.lightbox-prev');
+    const lightboxNext = document.querySelector('.lightbox-next');
+    const lightboxBackdrop = document.querySelector('.lightbox-backdrop');
+    
+    // Get all gallery items with lightbox data
+    const galleryItems = document.querySelectorAll('[data-lightbox="gallery"]');
+    let currentImageIndex = 0;
+    
+    // Create gallery data array
+    const galleryData = Array.from(galleryItems).map(item => ({
+        src: item.dataset.src,
+        title: item.dataset.title,
+        description: item.dataset.description,
+        element: item
+    }));
+    
+    // Update lightbox total count
+    if (lightboxTotal) {
+        lightboxTotal.textContent = galleryData.length;
+    }
+    
+    // Open lightbox function
+    function openLightbox(index) {
+        if (index < 0 || index >= galleryData.length) return;
+        
+        currentImageIndex = index;
+        const imageData = galleryData[index];
+        
+        // Update lightbox content
+        lightboxImage.src = imageData.src;
+        lightboxImage.alt = imageData.title;
+        lightboxTitle.textContent = imageData.title;
+        lightboxDescription.textContent = imageData.description;
+        lightboxCurrent.textContent = index + 1;
+        
+        // Show lightbox
+        lightbox.classList.remove('hidden');
+        document.body.style.overflow = 'hidden';
+        
+        // Focus on close button for accessibility
+        lightboxClose.focus();
+        
+        // Preload next and previous images
+        preloadImages(index);
+    }
+    
+    // Close lightbox function
+    function closeLightbox() {
+        lightbox.classList.add('hidden');
+        document.body.style.overflow = '';
+        
+        // Return focus to the gallery item that was clicked
+        if (galleryData[currentImageIndex] && galleryData[currentImageIndex].element) {
+            galleryData[currentImageIndex].element.focus();
+        }
+    }
+    
+    // Navigate to previous image
+    function previousImage() {
+        const newIndex = currentImageIndex > 0 ? currentImageIndex - 1 : galleryData.length - 1;
+        openLightbox(newIndex);
+    }
+    
+    // Navigate to next image
+    function nextImage() {
+        const newIndex = currentImageIndex < galleryData.length - 1 ? currentImageIndex + 1 : 0;
+        openLightbox(newIndex);
+    }
+    
+    // Preload adjacent images for better performance
+    function preloadImages(currentIndex) {
+        const indicesToPreload = [
+            currentIndex - 1 >= 0 ? currentIndex - 1 : galleryData.length - 1,
+            currentIndex + 1 < galleryData.length ? currentIndex + 1 : 0
+        ];
+        
+        indicesToPreload.forEach(index => {
+            if (index !== currentIndex) {
+                const img = new Image();
+                img.src = galleryData[index].src;
+            }
+        });
+    }
+    
+    // Add click event listeners to gallery items
+    galleryItems.forEach((item, index) => {
+        item.addEventListener('click', (e) => {
+            e.preventDefault();
+            openLightbox(index);
+        });
+        
+        // Add keyboard support
+        item.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                openLightbox(index);
+            }
+        });
+        
+        // Make gallery items focusable
+        item.setAttribute('tabindex', '0');
+        item.setAttribute('role', 'button');
+        item.setAttribute('aria-label', `View ${item.dataset.title} in full size`);
+    });
+    
+    // Add event listeners for lightbox controls
+    if (lightboxClose) {
+        lightboxClose.addEventListener('click', closeLightbox);
+    }
+    
+    if (lightboxPrev) {
+        lightboxPrev.addEventListener('click', previousImage);
+    }
+    
+    if (lightboxNext) {
+        lightboxNext.addEventListener('click', nextImage);
+    }
+    
+    if (lightboxBackdrop) {
+        lightboxBackdrop.addEventListener('click', closeLightbox);
+    }
+    
+    // Keyboard navigation for lightbox
+    document.addEventListener('keydown', (e) => {
+        if (!lightbox.classList.contains('hidden')) {
+            switch (e.key) {
+                case 'Escape':
+                    closeLightbox();
+                    break;
+                case 'ArrowLeft':
+                    e.preventDefault();
+                    previousImage();
+                    break;
+                case 'ArrowRight':
+                    e.preventDefault();
+                    nextImage();
+                    break;
+            }
+        }
+    });
+    
+    // Touch/swipe support for mobile
+    let touchStartX = 0;
+    let touchEndX = 0;
+    
+    if (lightbox) {
+        lightbox.addEventListener('touchstart', (e) => {
+            touchStartX = e.changedTouches[0].screenX;
+        }, { passive: true });
+        
+        lightbox.addEventListener('touchend', (e) => {
+            touchEndX = e.changedTouches[0].screenX;
+            handleSwipe();
+        }, { passive: true });
+    }
+    
+    function handleSwipe() {
+        const swipeThreshold = 50;
+        const diff = touchStartX - touchEndX;
+        
+        if (Math.abs(diff) > swipeThreshold) {
+            if (diff > 0) {
+                // Swiped left - show next image
+                nextImage();
+            } else {
+                // Swiped right - show previous image
+                previousImage();
+            }
+        }
+    }
+    
+    // Handle image loading errors
+    if (lightboxImage) {
+        lightboxImage.addEventListener('error', () => {
+            lightboxTitle.textContent = 'Image not found';
+            lightboxDescription.textContent = 'Sorry, this image could not be loaded.';
+        });
+    }
+    
+    // Add loading state to lightbox image
+    if (lightboxImage) {
+        lightboxImage.addEventListener('load', () => {
+            lightboxImage.style.opacity = '1';
+        });
+        
+        lightboxImage.addEventListener('loadstart', () => {
+            lightboxImage.style.opacity = '0.5';
+        });
+    }
+    
     console.log('Hudson Valley Sound website loaded successfully!');
 });
